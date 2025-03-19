@@ -10,7 +10,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import color from '../../../assets/color';
 import ItemCircular from '../../General/ItemCircular';
 import ItemBar from '../../General/ItemBar';
-import {useWindowDimensions} from 'react-native';
+// import {useWindowDimensions} from 'react-native';
 // const user = {
 //   id: 1,
 //   username: 'admin',
@@ -23,7 +23,7 @@ const data = {
 };
 
 const Dashboard = ({user}) => {
-  const {width, height} = useWindowDimensions();
+  // const {width, height} = useWindowDimensions();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Section */}

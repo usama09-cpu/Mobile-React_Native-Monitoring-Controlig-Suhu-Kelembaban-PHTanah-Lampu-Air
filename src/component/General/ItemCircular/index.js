@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
+import PropTypes from 'prop-types';
 import color from '../../../assets/color';
 
 const ItemCircular = ({
@@ -41,16 +42,18 @@ const ItemCircular = ({
   );
 };
 
-ItemCircular.defaultProps = {
-  max: 100,
-  min: 0,
-  size: 200,
-  width: 20,
-  unit: '',
-  bottomTitle: '',
-  topTitle: '',
-  colors: color.primary,
-  backgroundColor: color.background,
+// Menambahkan validasi tipe properti
+ItemCircular.propTypes = {
+  data: PropTypes.number.isRequired,
+  max: PropTypes.number,
+  min: PropTypes.number,
+  size: PropTypes.number,
+  width: PropTypes.number,
+  unit: PropTypes.string,
+  bottomTitle: PropTypes.string,
+  topTitle: PropTypes.string,
+  colors: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 export default ItemCircular;
