@@ -2,19 +2,43 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import color from '../../../assets/color';
 
-const ItemBar = ({data, title, max = 100, min = 0, unit = '%'}) => {
+const ItemBar = ({
+  data,
+  title,
+  max = 100,
+  min = 0,
+  unit = '%',
+  barColor = color.primary,
+  barHeight = 30,
+  barOutlineWidth = 2,
+  barBackgroundColor = color.background,
+}) => {
   const percentage = Math.min(
     Math.max(((data - min) / (max - min)) * 100, 0),
     100,
   );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.barTitle}>{title}</Text>
-      <View style={styles.barOutline}>
-        <View style={[styles.bar, {width: `${percentage}%`}]} />
+    <View style={[styles.container, {borderColor: barColor}]}>
+      <Text style={[styles.barTitle, {color: barColor,}]}>{title}</Text>
+      <View
+        style={[
+          styles.barOutline,
+          {
+            borderColor: barColor,
+            backgroundColor: barBackgroundColor,
+            borderWidth: barOutlineWidth,
+            height: barHeight,
+          },
+        ]}>
+        <View
+          style={[
+            styles.bar,
+            {width: `${percentage}%`, backgroundColor: barColor},
+          ]}
+        />
       </View>
-      <Text style={styles.barText}>{data + unit}</Text>
+      <Text style={[styles.barText, {color: barColor}]}>{data + unit}</Text>
     </View>
   );
 };
@@ -29,20 +53,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     marginBottom: 15,
-    borderColor: color.primary,
   },
   barOutline: {
     borderRadius: 5,
     width: '100%',
-    height: 30,
-    borderWidth: 2,
-    borderColor: color.primary,
-    backgroundColor: color.background,
     justifyContent: 'flex-start',
     marginTop: 10,
   },
   bar: {
-    backgroundColor: color.primary,
     height: '100%',
     borderTopRightRadius: 3,
     borderBottomRightRadius: 3,
@@ -50,13 +68,11 @@ const styles = StyleSheet.create({
   barTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: color.primary,
     marginBottom: 5,
   },
   barText: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: color.primary,
     marginTop: 5,
   },
 });

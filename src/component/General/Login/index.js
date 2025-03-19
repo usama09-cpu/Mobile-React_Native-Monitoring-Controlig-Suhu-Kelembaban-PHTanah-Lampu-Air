@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   Alert,
   StyleSheet,
@@ -16,7 +16,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import color from '../../../assets/color';
 import Button from '../Button';
 
-const Login = ({ onLoginSuccess, navigation }) => {
+const Login = ({onLoginSuccess, navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
@@ -26,10 +26,10 @@ const Login = ({ onLoginSuccess, navigation }) => {
       Alert.alert('Error', 'Username is required.');
       return;
     }
-    if (!password.trim() || password.length < 8) {
-      Alert.alert('Error', 'Password must be at least 8 characters.');
-      return;
-    }
+    // if (!password.trim() || password.length < 8) {
+    //   Alert.alert('Error', 'Password must be at least 8 characters.');
+    //   return;
+    // }
     if (username === 'admin' && password === 'admin123') {
       onLoginSuccess(username, password);
     } else {

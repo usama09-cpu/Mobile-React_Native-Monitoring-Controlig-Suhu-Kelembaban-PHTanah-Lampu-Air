@@ -37,7 +37,7 @@ const ButtonPowerCircle = ({onPress, colors}) => {
           <MaterialIcons
             name="power-settings-new"
             size={70}
-            style={{color: 'white'}}
+            style={{color: color.white}}
           />
         </TouchableOpacity>
       </Animated.View>

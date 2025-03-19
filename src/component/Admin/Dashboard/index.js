@@ -10,7 +10,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import color from '../../../assets/color';
 import ItemCircular from '../../General/ItemCircular';
 import ItemBar from '../../General/ItemBar';
-import { useWindowDimensions } from 'react-native';
+import {useWindowDimensions} from 'react-native';
 // const user = {
 //   id: 1,
 //   username: 'admin',
@@ -18,12 +18,12 @@ import { useWindowDimensions } from 'react-native';
 
 const data = {
   suhu: 35,
-  kelembaban: 50,
+  kelembaban: 10,
   PHTanah: 7,
 };
 
 const Dashboard = ({user}) => {
-  const { width, height } = useWindowDimensions();
+  const {width, height} = useWindowDimensions();
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Section */}
@@ -52,7 +52,17 @@ const Dashboard = ({user}) => {
             min={-40}
             size={120}
             width={20}
-            tintColor={color.primary}
+            colors={
+              data.suhu < 0
+                ? color.coldLight
+                : data.suhu < 15
+                ? color.coldDark
+                : data.suhu < 30
+                ? color.warmLight
+                : data.suhu < 40
+                ? color.warmDark
+                : color.hotLight
+            }
             backgroundColor={color.background}
             topTitle="Suhu"
             unit="°C"
@@ -60,6 +70,15 @@ const Dashboard = ({user}) => {
           <ItemBar
             data={data.kelembaban}
             title="Kelembaban"
+            barColor={
+              data.kelembaban < 20
+                ? color.veryDry
+                : data.kelembaban < 50
+                ? color.dry
+                : data.kelembaban < 80
+                ? color.normal
+                : color.humid
+            }
             max={100}
             min={0}
           />
@@ -69,6 +88,13 @@ const Dashboard = ({user}) => {
             max={14}
             min={0}
             unit="pH"
+            barColor={
+              data.PHTanah < 7
+                ? color.acidic
+                : data.PHTanah === 7
+                ? color.neutral
+                : color.alkaline
+            }
           />
         </View>
       </View>

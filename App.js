@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import colors from './src/assets/color';
 import Login from './src/component/General/Login';
 import Home from './src/component/Admin/Home';
 import Register from './src/component/General/Register';

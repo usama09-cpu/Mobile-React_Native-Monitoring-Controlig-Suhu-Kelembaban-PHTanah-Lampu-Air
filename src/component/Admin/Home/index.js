@@ -13,7 +13,6 @@ import color from '../../../assets/color';
 import Dashboard from '../Dashboard';
 import Control from '../Control';
 import Profile from '../Profile';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 const {width} = Dimensions.get('window');
 
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
   footerItem: {
     alignItems: 'center',
     paddingVertical: 5,
-    width: width / menu.length - 10, // Dynamic width
+    width: width / menu.length - 10,
   },
   footerItemActive: {
     backgroundColor: color.lightGray,
