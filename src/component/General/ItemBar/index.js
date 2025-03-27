@@ -20,7 +20,7 @@ const ItemBar = ({
 
   return (
     <View style={[styles.container, {borderColor: barColor}]}>
-      <Text style={[styles.barTitle, {color: barColor,}]}>{title}</Text>
+      <Text style={[styles.barTitle, {color: barColor}]}>{title}</Text>
       <View
         style={[
           styles.barOutline,
