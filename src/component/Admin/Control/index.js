@@ -20,6 +20,10 @@ const menuControl = [
     name: 'Lampu',
     icon: 'lightbulb',
   },
+  {
+    name: 'Kipas',
+    icon: 'air',
+  },
 ];
 
 const Control = () => {
@@ -40,6 +44,8 @@ const Control = () => {
       setUri(
         'https://i.pinimg.com/736x/7b/f6/d5/7bf6d5040893966f6811767087d90964.jpg',
       );
+    } else {
+      setUri('');
     }
   };
 
