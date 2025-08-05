@@ -18,6 +18,7 @@
     "react-native-circular-progress": "^1.4.1",
     "react-native-gesture-handler": "^2.22.0",
     "react-native-ionicons": "^4.6.5",
+    "react-native-popover-view": "^6.1.0",
     "react-native-reanimated": "^3.16.6",
     "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "^4.5.0",
