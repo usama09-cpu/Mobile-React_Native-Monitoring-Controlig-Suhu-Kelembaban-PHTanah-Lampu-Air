@@ -33,6 +33,7 @@ const Control = () => {
   );
   const [airOn, setAirOn] = useState(false);
   const [lampuOn, setLampuOn] = useState(false);
+  const [kipasOn, setKipasOn] = useState(false);
 
   const handleNav = name => {
     setNavMenu(name);
@@ -45,7 +46,9 @@ const Control = () => {
         'https://i.pinimg.com/736x/7b/f6/d5/7bf6d5040893966f6811767087d90964.jpg',
       );
     } else {
-      setUri('');
+      setUri(
+        'https://ds393qgzrxwzn.cloudfront.net/resize/m500x500/cat1/img/images/0/He8FacxNN4.jpg',
+      );
     }
   };
 
@@ -54,6 +57,8 @@ const Control = () => {
       setAirOn(!airOn);
     } else if (navMenu === 'Lampu') {
       setLampuOn(!lampuOn);
+    } else if (navMenu === 'Kipas') {
+      setKipasOn(!kipasOn);
     }
   };
 
@@ -65,6 +70,10 @@ const Control = () => {
     } else if (navMenu === 'Lampu') {
       return {
         backgroundColor: lampuOn ? color.green : color.red,
+      };
+    } else if (navMenu === 'Kipas') {
+      return {
+        backgroundColor: kipasOn ? color.green : color.red,
       };
     }
   };
