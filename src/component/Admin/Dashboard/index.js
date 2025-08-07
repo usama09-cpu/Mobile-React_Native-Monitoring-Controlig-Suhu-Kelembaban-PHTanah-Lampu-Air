@@ -233,6 +233,7 @@ const styles = StyleSheet.create({
   },
   popoverContainer: {
     minWidth: 300,
+    // maxWidth: 500,
     maxHeight: 300,
     // backgroundColor: color.white,
     borderRadius: 10,

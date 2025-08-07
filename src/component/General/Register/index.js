@@ -50,7 +50,7 @@ const Register = ({navigation}) => {
           keyboardShouldPersistTaps="handled">
           <View style={styles.body}>
             <View style={styles.avatar}>
-              <MaterialIcons name="person-add" size={80} color={color.white} />
+              <MaterialIcons name="person-add" size={70} color={color.white} />
             </View>
             <TextInput
               style={styles.input}
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 100,
     height: 100,
-    borderRadius: 50,
+    borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
